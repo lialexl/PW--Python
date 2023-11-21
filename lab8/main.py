@@ -1,6 +1,6 @@
 def sum(num):
     summa = 0
-    i = len(num)
+    i = len(str(num))
     while i != 0:
         summa += int(num[i-1])
         i -= 1
