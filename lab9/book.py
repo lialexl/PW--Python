@@ -23,11 +23,20 @@ def add(database, id, title, author, year):
 
 
 def delete(database, id):
-    return
+    if id not in database:
+        raise ValueError("Book with this id does not exist")
+    del database[id]
 
 
-def edit():
-    return
+def edit(database, id, title=None, author=None, year=None):
+    if id not in database:
+        raise ValueError("Book with this id does not exist")
+    if title:
+        database[id]['title'] = title
+    if author:
+        database[id]['author'] = author
+    if year:
+        database[id]['year'] = year
 
 
 def book_list(base):
